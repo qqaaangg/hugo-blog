@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.133.0">
+    <meta name="description" content="">
+<meta name="author" content="technical@bsscommerce.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Varnish :: RDS Wiki</title>
+
+    
+    <link href="/css/nucleus.css?1751531075" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1751531075" rel="stylesheet">
+    <link href="/css/hybrid.css?1751531075" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1751531075" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1751531075" rel="stylesheet">
+    <link href="/css/auto-complete.css?1751531075" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1751531075" rel="stylesheet">
+    <link href="/css/theme.css?1751531075" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1751531075" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1751531075" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1751531075"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/1-server/1.3-services/1.3.1-varnish/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="30%" viewBox="0 0 1200.000000 1200.000000" preserveAspectRatio="xMidYMid meet" style="margin-right: 9px;">
+        <g transform="translate(0.000000,1200.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+        <path d="M1490 9705 l0 -155 4563 2 4562 3 3 153 3 152 -4566 0 -4565 0 0 -155z"/>
+        <path d="M8580 8694 c-437 -35 -732 -232 -872 -582 -74 -186 -104 -382 -95 -632 9 -253 46 -416 137 -605 114 -236 323 -491 622 -756 143 -126 341 -323 406 -402 169 -207 236 -365 249 -592 13 -232 -47 -383 -177 -450 -97 -49 -243 -57 -355 -19 -78 27 -157 112 -186 200 -21 63 -23 92 -27 312 l-4 242 -344 0 -344 0 0 -195 c0 -227 11 -349 46 -494 73 -310 243 -527 509 -652 289 -136 732 -140 1035 -10 214 92 356 233 460 453 123 263 153 665 75 996 -88 368 -311 674 -822 1125 -290 257 -462 486 -523 697 -30 104 -39 336 -16 433 29 122 79 192 172 238 40 20 68 25 154 27 117 4 162 -5 231 -49 56 -35 94 -88 122 -166 16 -47 21 -92 25 -240 l4 -183 344 0 344 0 0 125 c0 746 -347 1150 -1010 1178 -63 2 -135 3 -160 1z"/>
+        <path d="M2350 6325 l0 -2315 360 0 360 0 0 945 0 945 158 0 c86 0 182 -4 212 -9 189 -31 291 -130 337 -328 13 -56 17 -175 23 -693 8 -643 12 -701 53 -815 l14 -40 367 -3 c289 -2 366 0 366 10 0 7 -7 33 -16 57 -45 129 -46 149 -54 806 -6 577 -9 640 -28 746 -55 303 -179 495 -394 609 -32 17 -58 34 -58 38 0 4 35 27 76 52 144 85 265 241 325 415 58 171 64 232 64 640 0 384 -5 457 -46 612 -99 376 -363 584 -801 632 -58 7 -344 11 -708 11 l-610 0 0 -2315z m1241 1629 c100 -46 155 -125 184 -259 21 -98 21 -729 1 -826 -36 -169 -142 -272 -307 -298 -35 -6 -139 -11 -231 -11 l-168 0 0 711 0 711 238 -4 c216 -3 241 -5 283 -24z"/>
+        <path d="M5002 6328 l3 -2313 645 1 c543 0 661 3 745 17 242 39 426 127 561 268 138 145 212 306 262 563 13 70 16 256 19 1346 5 1518 3 1564 -81 1812 -43 127 -104 231 -189 323 -119 130 -267 212 -476 263 l-106 26 -693 3 -692 4 2 -2313z m1320 1619 c94 -46 153 -134 177 -262 15 -82 15 -2628 0 -2710 -24 -132 -82 -215 -181 -261 l-63 -29 -262 -3 -263 -3 0 1651 0 1651 268 -3 267 -3 57 -28z"/>
+        <path d="M1490 2955 l0 -155 4565 0 4566 0 -3 153 -3 152 -4562 3 -4563 2 0 -155z"/>
+        </g>
+    </svg>
+    
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1751531075"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1751531075"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1751531075"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-server/" title="Server" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/1-server/">
+           <b> 1. </b> Server
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-server/1.1-commandline/" title="Các câu lệnh linux cơ bản" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-server/1.1-commandline/">
+           <b> 1.1 </b> Các câu lệnh linux cơ bản
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-server/1.2-additional/" title="Bổ xung" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-server/1.2-additional/">
+           <b> 1.2 </b> Bổ xung
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-server/1.2-additional/1.2.1-permission/" title="Phân Quyền" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-server/1.2-additional/1.2.1-permission/">
+           <b> 1.2.1 </b> Phân Quyền
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-server/1.2-additional/1.2.2-magento-cloud/" title="Magento Cloud" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-server/1.2-additional/1.2.2-magento-cloud/">
+           <b> 1.2.2 </b> Magento Cloud
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-server/1.2-additional/1.2.3-sshkey/" title="SSH Key" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-server/1.2-additional/1.2.3-sshkey/">
+           <b> 1.2.3 </b> SSH Key
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-server/1.3-services/" title="Các services" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/1-server/1.3-services/">
+           <b> 1.3 </b> Các services
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-server/1.3-services/1.3.1-varnish/" title="Varnish" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/1-server/1.3-services/1.3.1-varnish/">
+           <b> 1.3.1 </b> Varnish
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-server/1.3-services/1.3.2-fastly-cdn/" title="Fastly CDN" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-server/1.3-services/1.3.2-fastly-cdn/">
+           <b> 1.3.2 </b> Fastly CDN
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-system/" title="Hệ thống" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-system/">
+           <b> 2. </b> Hệ thống
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-system/2.1-xteam/" title="XTEAM" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-system/2.1-xteam/">
+           <b> 2.1 </b> XTEAM
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-system/2.2-uptimerobot/" title="UPTIMEROBOT" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-system/2.2-uptimerobot/">
+           <b> 2.2 </b> UPTIMEROBOT
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-system/2.3-monitor/" title="MONITOR" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-system/2.3-monitor/">
+           <b> 2.3 </b> MONITOR
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>30-09-2024</font></i>
+    </left>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>RDS WIKI</a> > <a href='/1-server/'>Server</a> > <a href='/1-server/1.3-services/'>Các services</a> > Varnish
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-tổng-quan"><strong>1. Tổng quan</strong></a></li>
+        <li><a href="#2-sử-dụng-varnish-trong-magento-2"><strong>2. Sử dụng Varnish trong Magento 2</strong></a></li>
+        <li><a href="#3-các-lệnh-cơ-bản"><strong>3. Các lệnh cơ bản</strong></a></li>
+        <li><a href="#4-file-vcl"><strong>4. File vcl</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Varnish
+            </h1>
+          
+
+        
+
+
+
+	<h3 id="1-tổng-quan"><strong>1. Tổng quan</strong></h3>
+<p><img alt="varnish" src="/images/1/3/1/0001.jpg?featherlight=false&width=70pc"></p>
+<ul>
+<li>Là 1 middleware giữa <strong>webserver</strong> (backend)  và <strong>browser</strong> (frontend), đảm nhận trách nhiệm lưu trữ các bản cache ngoài frontend (static content, api response, fpc,&hellip;)</li>
+<li>Giúp người dùng truy xuất nhanh hơn (rất nhanh luôn =))) nội dung ngoài trình duyệt và giảm tải cho <strong>backend</strong></li>
+<li>Phù hợp với các website nhiều nội dung và được truy cập thường xuyên như blog, privacy, news&hellip;</li>
+<li>Chúng ta có thể tuỳ biến để Varnish để lưu và truy xuất cache thông qua file VCL (Varnish Configuration Language)
+<table>
+<thead>
+<tr>
+<th>Cấu trúc:</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file default.vcl (/etc/varnish/default.vcl)</td>
+<td>file cấu hình của varnish</td>
+</tr>
+<tr>
+<td>file secret (/etc/varnish/secret)</td>
+<td>được dùng để xác thực các yêu cầu quản trị như command <code>varnishadm</code>, <code>varnishd</code> (tương tự file key)</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h3 id="2-sử-dụng-varnish-trong-magento-2"><strong>2. Sử dụng Varnish trong Magento 2</strong></h3>
+<p><img alt="varnish-magento" src="/images/1/3/1/0002.png?featherlight=false&width=90pc"></p>
+<ul>
+<li>Trong Magento 2, Varnish hoạt động dưới dạng fpc (full page cache) thay thế cho built-in cache</li>
+<li>Các page varnish lưu trữ cache (default): product page, catalog page, cms page, search page, privacy page.
+<img alt="varnish-check" src="/images/1/3/1/0007.png?featherlight=false&width=90pc"></li>
+</ul>
+<h3 id="3-các-lệnh-cơ-bản"><strong>3. Các lệnh cơ bản</strong></h3>
+<p>Bên cạnh <code>varnishd</code> và <code>varnishlog</code> tại page <a href="/1-server/1.1-commandline/#command-varnish">các câu lệnh varnish cơ bản</a> thì còn bổ xung thêm vài command để quản trị như sau:</p>
+<ul>
+<li>
+<p><code>varnishadm</code>: dùng để truy cập khu vực admin của varnish (yêu cầu root user)</p>
+<ul>
+<li>Syntax: <code>varnishadm -S [SECRET_FILE] -T [HOST]:[PORT]</code></li>
+<li>Xem thêm <a href="https://varnish-cache.org/docs/trunk/reference/varnishadm.html">tại đây</a></li>
+<li><img alt="varnishadm" src="/images/1/3/1/0003.png?featherlight=false&width=90pc"></li>
+</ul>
+</li>
+<li>
+<p><code>varnishstat</code>: hiển thị các con số thống kê chi tiết trong quá trình xử lý cache của Varnish (số lượng page cache, tỉ lệ hit/miss, số lần đẩy request xuống <strong>backend</strong> ,&hellip;)</p>
+<ul>
+<li>Syntax: <code>varnishstat [OPTIONS]</code> (thường các option được sử dụng để làm báo cáo, xem thêm <a href="https://varnish-cache.org/docs/trunk/reference/varnishstat.html">tại đây</a>)</li>
+<li><img alt="varnishstat" src="/images/1/3/1/0004.png?featherlight=false&width=90pc"></li>
+</ul>
+</li>
+<li>
+<p><code>varnishhist</code>: đối chiếu giữa các lượt request đến cache (HIT) so với các lượt request trực tiếp vào <strong>backend</strong></p>
+<ul>
+<li>Syntax: <code>varnishhist [OPTIONS]</code> (thường các option được sử dụng để làm báo cáo, xem thêm <a href="https://varnish-cache.org/docs/trunk/reference/varnishhist.html">tại đây</a>)</li>
+<li><img alt="varnishhist" src="/images/1/3/1/0005.png?featherlight=false&width=90pc"></li>
+</ul>
+</li>
+</ul>
+<h3 id="4-file-vcl"><strong>4. File vcl</strong></h3>
+
+<div class="notices note" ><p><strong>Không lưu trữ cache</strong> các thông tin động và nhạy cảm như <strong>dữ liệu thanh toán (payment), giỏ hàng (cart), đăng nhập (login),&hellip;</strong></p>
+</div>
+
+<h4 id="a-sơ-lược"><strong>a. Sơ lược</strong></h4>
+<ul>
+<li>
+<p>Được cấu trúc bởi các chương trình con (<strong>subroutines</strong> - gọi tắt là <strong>sub</strong>, tương tự như 1 function)</p>
+</li>
+<li>
+<p>Mỗi <strong>sub</strong> sẽ đều có 1 chức năng khi các đoạn code bên trong mỗi <strong>sub</strong> khớp với chỉ thị của các truy cập gửi vào server (mỗi <strong>sub</strong> chỉ được khai báo 1 lần =&gt; không được trùng lặp)</p>
+</li>
+<li>
+<p>Mặc định nếu file default.vcl không có nội dung VCL nào ngoài dòng backend server để khai báo cổng kết nối của backend, thì tất cả các page đều được gắn cache và tự động hủy (purge) sau 2 phút.</p>
+</li>
+<li>
+<p>Ngoài ra còn có 2 thành phần quan trọng khác là:</p>
+<ul>
+<li><strong>backend</strong>: cấu hình webserver/backend nhận request</li>
+<li><strong>acl</strong>: cơ chế để kiểm soát quyền truy cập, cho phép sử dụng dns/ip/dải ip.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="backend-acl" src="/images/1/3/1/0006.png?featherlight=false&width=70pc"></p>
+<h4 id="b-cú-pháp"><strong>b. Cú pháp</strong></h4>
+<pre tabindex="0"><code>sub sub_name {
+    // rules
+}
+</code></pre><ul>
+<li>Cú pháp <strong>sub</strong>:
+<ul>
+<li>Định dạng chuỗi: luôn đặt trong dấu nháy đôi, ví dụ: <code>req.url ~ &quot;(?i)\.(png|gif|jpeg|jpg|ico|swf|css|js|html|htm)(\?[a-z0-9]+)?$&quot; )</code></li>
+<li>Toán tử:
+<ul>
+<li>Gán giá trị: <code>=</code></li>
+<li>So sánh tuyệt đối: <code>==</code></li>
+<li>So sánh tương đối hoặc sử dụng regex: <code>~</code></li>
+<li>Phủ định: <code>!</code></li>
+<li>Toán tử và: <code>&amp;&amp;</code></li>
+<li>Toán tử hoặc: <code>||</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="c-các-biến-toàn-cục-global-variables"><strong>c. Các biến toàn cục (global variables)</strong></h4>
+
+<div class="notices note" ><p>Các biến toàn cục có thể được gán giá trị bằng từ khóa <code>set</code> hoặc <code>unset</code> để bỏ gán</p>
+</div>
+
+<table>
+<thead>
+<tr>
+<th>Thông số</th>
+<th>Giải thích</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>now</td>
+<td>thời gian hiện tại</td>
+</tr>
+<tr>
+<td>client.ip</td>
+<td>ip của người dùng qua browser</td>
+</tr>
+<tr>
+<td>server.hostname</td>
+<td>tên máy chủ</td>
+</tr>
+<tr>
+<td>server.ip</td>
+<td>địa chỉ ip máy chủ</td>
+</tr>
+<tr>
+<td>server.port</td>
+<td>Cổng máy chủ được truy cập</td>
+</tr>
+<tr>
+<td>req</td>
+<td>request</td>
+</tr>
+<tr>
+<td>res</td>
+<td>response</td>
+</tr>
+<tr>
+<td>beresp</td>
+<td>backend response</td>
+</tr>
+<tr>
+<td>req.backend</td>
+<td>tên <strong>backend</strong>  xử lý request</td>
+</tr>
+<tr>
+<td>req.backend.healthy</td>
+<td>tình trạng <strong>backend</strong></td>
+</tr>
+<tr>
+<td>req.hash_always_miss</td>
+<td>buộc một yêu cầu cụ thể luôn bỏ qua bộ nhớ cache</td>
+</tr>
+<tr>
+<td>req.http.header</td>
+<td>thông tin header địa chỉ request</td>
+</tr>
+<tr>
+<td>req.method</td>
+<td>thông tin phương thức được sử dụng qua request</td>
+</tr>
+<tr>
+<td>req.proto</td>
+<td>phương thức được request</td>
+</tr>
+<tr>
+<td>req.restarts</td>
+<td>số lần 1 request được xử lý lại</td>
+</tr>
+<tr>
+<td>req.request</td>
+<td>các loại request (POST, GET,&hellip;)</td>
+</tr>
+<tr>
+<td>req.url</td>
+<td>url được request</td>
+</tr>
+</tbody>
+</table>
+<h4 id="d-các-sub-có-sẵn"><strong>d. Các sub có sẵn</strong></h4>
+
+<div class="notices note" ><p>Các ví dụ bên dưới đều sử dụng qua <a href="../../../../files/varnish.vcl">file varnish 6 default export của magento 2</a></p>
+</div>
+
+<ul>
+<li>
+<p><code>vcl_recv</code> (revceive):</p>
+<ul>
+<li>Đặc điểm: được gọi ra khi bắt đầu khách gửi 1 request, điều hướng request người dùng tới data cache hoặc thẳng vào <strong>backend</strong>.</li>
+<li>Tiến trình xử lý:
+<ul>
+<li><code>return (hash)</code>: điều hướng tới cache bằng cách gán cho request đó 1 mã băm riêng biệt (Varnish sẽ chuyển đến sub <code>vcl_hash</code>).</li>
+<li><code>return (pass)</code>: Varnish sẽ gửi truy vấn đến trực tiếp <strong>backend</strong> mà không có cache.</li>
+<li><code>return (pipe)</code>: chuyển request đến Pipe Mode dựa trên sub <code>vcl_pipe</code>.</li>
+<li><code>return (purge)</code>: chuyển request thành 1 request không phù hợp để loại bỏ (được xử lý thông qua sub <code>vcl_hash</code> và <code>vcl_purge</code>).</li>
+</ul>
+</li>
+<li>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Ví dụ
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <pre tabindex="0"><code>sub vcl_recv {
+    if (req.restarts &gt; 0) {
+        set req.hash_always_miss = true;
+    }
+
+    if (req.method == &#34;PURGE&#34;) {
+        if (client.ip !~ purge) {
+            return (synth(405, &#34;Method not allowed&#34;));
+        }
+        # To use the X-Pool header for purging varnish during automated deployments, make sure the X-Pool header
+        # has been added to the response in your backend server config. This is used, for example, by the
+        # capistrano-magento2 gem for purging old content from varnish during it&#39;s deploy routine.
+        if (!req.http.X-Magento-Tags-Pattern &amp;&amp; !req.http.X-Pool) {
+            return (synth(400, &#34;X-Magento-Tags-Pattern or X-Pool header required&#34;));
+        }
+        if (req.http.X-Magento-Tags-Pattern) {
+          ban(&#34;obj.http.X-Magento-Tags ~ &#34; + req.http.X-Magento-Tags-Pattern);
+        }
+        if (req.http.X-Pool) {
+          ban(&#34;obj.http.X-Pool ~ &#34; + req.http.X-Pool);
+        }
+        return (synth(200, &#34;Purged&#34;));
+    }
+
+    if (req.method != &#34;GET&#34; &amp;&amp;
+        req.method != &#34;HEAD&#34; &amp;&amp;
+        req.method != &#34;PUT&#34; &amp;&amp;
+        req.method != &#34;POST&#34; &amp;&amp;
+        req.method != &#34;TRACE&#34; &amp;&amp;
+        req.method != &#34;OPTIONS&#34; &amp;&amp;
+        req.method != &#34;DELETE&#34;) {
+          /* Non-RFC2616 or CONNECT which is weird. */
+          return (pipe);
+    }
+
+    # We only deal with GET and HEAD by default
+    if (req.method != &#34;GET&#34; &amp;&amp; req.method != &#34;HEAD&#34;) {
+        return (pass);
+    }
+
+    # Bypass customer, shopping cart, checkout
+    if (req.url ~ &#34;/customer&#34; || req.url ~ &#34;/checkout&#34;) {
+        return (pass);
+    }
+
+    # Bypass health check requests
+    if (req.url ~ &#34;^/(pub/)?(health_check.php)$&#34;) {
+        return (pass);
+    }
+
+    # Set initial grace period usage status
+    set req.http.grace = &#34;none&#34;;
+
+    # normalize url in case of leading HTTP scheme and domain
+    set req.url = regsub(req.url, &#34;^http[s]?://&#34;, &#34;&#34;);
+
+    # collect all cookies
+    std.collect(req.http.Cookie);
+
+    # Compression filter. See https://www.varnish-cache.org/trac/wiki/FAQ/Compression
+    if (req.http.Accept-Encoding) {
+        if (req.url ~ &#34;\.(jpg|jpeg|png|gif|gz|tgz|bz2|tbz|mp3|ogg|swf|flv)$&#34;) {
+            # No point in compressing these
+            unset req.http.Accept-Encoding;
+        } elsif (req.http.Accept-Encoding ~ &#34;gzip&#34;) {
+            set req.http.Accept-Encoding = &#34;gzip&#34;;
+        } elsif (req.http.Accept-Encoding ~ &#34;deflate&#34; &amp;&amp; req.http.user-agent !~ &#34;MSIE&#34;) {
+            set req.http.Accept-Encoding = &#34;deflate&#34;;
+        } else {
+            # unknown algorithm
+            unset req.http.Accept-Encoding;
+        }
+    }
+
+    # Remove all marketing get parameters to minimize the cache objects
+    if (req.url ~ &#34;(\?|&amp;)(gclid|cx|ie|cof|siteurl|zanpid|origin|fbclid|mc_[a-z]+|utm_[a-z]+|_bta_[a-z]+)=&#34;) {
+        set req.url = regsuball(req.url, &#34;(gclid|cx|ie|cof|siteurl|zanpid|origin|fbclid|mc_[a-z]+|utm_[a-z]+|_bta_[a-z]+)=[-_A-z0-9+()%.]+&amp;?&#34;, &#34;&#34;);
+        set req.url = regsub(req.url, &#34;[?|&amp;]+$&#34;, &#34;&#34;);
+    }
+
+    # Static files caching
+    if (req.url ~ &#34;^/(pub/)?(media|static)/&#34;) {
+        # Static files should not be cached by default
+        return (pass);
+
+        # But if you use a few locales and don&#39;t use CDN you can enable caching static files by commenting previous line (#return (pass);) and uncommenting next 3 lines
+        #unset req.http.Https;
+        #unset req.http.X-Forwarded-Proto;
+        #unset req.http.Cookie;
+    }
+
+    # Bypass authenticated GraphQL requests without a X-Magento-Cache-Id
+    if (req.url ~ &#34;/graphql&#34; &amp;&amp; !req.http.X-Magento-Cache-Id &amp;&amp; req.http.Authorization ~ &#34;^Bearer&#34;) {
+        return (pass);
+    }
+
+    return (hash);
+}
+</code></pre>
+    </div>
+</div></li>
+</ul>
+</li>
+<li>
+<p><code>vcl_pipe</code>:</p>
+<ul>
+<li>Đặc điểm: mở một kết nối hai chiều TCP Proxy để request có thể gửi thẳng đến backend và ngược lại (thường dành cho streaming, tạo 1 connect thẳng tới backend).</li>
+<li>Note: không có sub nào được xử lý sau khi <strong>Pipe Mode</strong> kết thúc</li>
+</ul>
+</li>
+<li>
+<p><code>vcl_pass</code>:</p>
+<ul>
+<li>Đặc điểm: gửi request thẳng tới backend và backend trả lại dữ liệu không thông qua cache (Pass mode)</li>
+<li>Tiến trình: kết thúc với 1 trong 2 return sau:
+<ul>
+<li><code>return (fetch)</code>: báo hiệu request vào Pass mode và backend bắt đầu xử lý.</li>
+<li><code>return (restart)</code>: bắt đầu lại quá trình chuyển request.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>vcl_hit</code>:</p>
+<ul>
+<li>Đặc điểm: được gọi ra khi Varnish tìm thấy 1 bản cache phù hợp</li>
+<li>Tiến trình: kết thúc bằng 1 trong các return sau
+<ul>
+<li><code>return (deliver)</code>: trả response được cache cho người dùng.</li>
+<li><code>return (fetch)</code>: Đồng bộ lại dữ liệu của đối tượng đã được lưu cache với nội dung trả về từ backend server (sub <code>vcl_miss</code> sẽ bắt đầu làm việc).</li>
+<li><code>return (pass)</code>: Gửi request vào Pass mode với ``vcl_pass.</li>
+<li><code>return (restart)</code>: bắt đầu lại quá trình chuyển request.</li>
+</ul>
+</li>
+<li>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Ví dụ
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <pre tabindex="0"><code>sub vcl_hit {
+    if (obj.ttl &gt;= 0s) {
+        # Hit within TTL period
+        return (deliver);
+    }
+    if (std.healthy(req.backend_hint)) {
+        if (obj.ttl + s &gt; 0s) {
+            # Hit after TTL expiration, but within grace period
+            set req.http.grace = &#34;normal (healthy server)&#34;;
+            return (deliver);
+        } else {
+            # Hit after TTL and grace expiration
+            return (restart);
+        }
+    } else {
+        # server is not healthy, retrieve from cache
+        set req.http.grace = &#34;unlimited (unhealthy server)&#34;;
+        return (deliver);
+    }
+}
+</code></pre>
+    </div>
+</div></li>
+</ul>
+</li>
+<li>
+<p><code>vcl_miss</code>:</p>
+<ul>
+<li>Đặc điểm: chuyển request qua backend, được kích hoạt nếu request không tìm thấy đối tượng cache phù hợp, hoặc request được return(fetch) ở sub <code>vcl_hit</code></li>
+<li>Tiến trình: kết thúc bằng 1 trong các return sau
+<ul>
+<li><code>return (fetch)</code>: nhận data được request đến backend thông qua sub <code>vcl_backend_fetch</code>.</li>
+<li><code>return (pass)</code>: Đưa request vào Pass mode và xử lý bằng vcl_pass.</li>
+<li><code>return (restart)</code>: bắt đầu lại quá trình chuyển request.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>vcl_backend_fetch</code>:</p>
+<ul>
+<li>Đặc điểm: kiểm soát hành vi của Varnish trước khi gửi yêu cầu đến backend</li>
+<li>Tiến trình: <code>return (fetch)</code> gửi yêu cầu đến backend sau khi tất cả các thao tác điều chỉnh đã hoàn tất.</li>
+</ul>
+</li>
+<li>
+<p><code>vcl_backend_response</code>:</p>
+<ul>
+<li>Đặc điểm: được sử dụng để xử lý phản hồi từ backend trước khi nó được lưu trữ vào cache hoặc gửi tới client</li>
+<li>Tiến trình:
+<ul>
+<li><code>return (pass)</code>: đưa request vào Pass mode và xử lý bằng vcl_pass.</li>
+<li><code>return (deliver)</code>: trả response được cache cho người dùng.</li>
+</ul>
+</li>
+<li>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Ví dụ
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <pre tabindex="0"><code>sub vcl_backend_response {
+
+    set beresp.grace = 3d;
+
+    if (beresp.http.content-type ~ &#34;text&#34;) {
+        set beresp.do_esi = true;
+    }
+
+    if (bereq.url ~ &#34;\.js$&#34; || beresp.http.content-type ~ &#34;text&#34;) {
+        set beresp.do_gzip = true;
+    }
+
+    if (beresp.http.X-Magento-Debug) {
+        set beresp.http.X-Magento-Cache-Control = beresp.http.Cache-Control;
+    }
+
+    # cache only successfully responses and 404s that are not marked as private
+    if (beresp.status != 200 &amp;&amp;
+            beresp.status != 404 &amp;&amp;
+            beresp.http.Cache-Control ~ &#34;private&#34;) {
+        set beresp.uncacheable = true;
+        set beresp.ttl = 86400s;
+        return (deliver);
+    }
+
+    # validate if we need to cache it and prevent from setting cookie
+    if (beresp.ttl &gt; 0s &amp;&amp; (bereq.method == &#34;GET&#34; || bereq.method == &#34;HEAD&#34;)) {
+        unset beresp.http.set-cookie;
+    }
+
+   # If page is not cacheable then bypass varnish for 2 minutes as Hit-For-Pass
+   if (beresp.ttl &lt;= 0s ||
+       beresp.http.Surrogate-control ~ &#34;no-store&#34; ||
+       (!beresp.http.Surrogate-Control &amp;&amp;
+       beresp.http.Cache-Control ~ &#34;no-cache|no-store&#34;) ||
+       beresp.http.Vary == &#34;*&#34;) {
+        # Mark as Hit-For-Pass for the next 2 minutes
+        set beresp.ttl = 120s;
+        set beresp.uncacheable = true;
+   }
+
+   # If the cache key in the Magento response doesn&#39;t match the one that was sent in the request, don&#39;t cache under the request&#39;s key
+   if (bereq.url ~ &#34;/graphql&#34; &amp;&amp; bereq.http.X-Magento-Cache-Id &amp;&amp; bereq.http.X-Magento-Cache-Id != beresp.http.X-Magento-Cache-Id) {
+      set beresp.ttl = 0s;
+      set beresp.uncacheable = true;
+   }
+
+    return (deliver);
+}
+</code></pre>
+    </div>
+</div></li>
+</ul>
+</li>
+<li>
+<p><code>vcl_hash</code>:</p>
+<ul>
+<li>Đặc điểm: được sử dụng như để tìm ra một đối tượng đã được cache trong Varnish bằng một mã băm</li>
+<li>Tiến trình: <code>return(lookup)</code> để tìm một đối tượng cache</li>
+<li>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Ví dụ
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <pre tabindex="0"><code>sub vcl_hash {
+    if ((req.url !~ &#34;/graphql&#34; || !req.http.X-Magento-Cache-Id) &amp;&amp; req.http.cookie ~ &#34;X-Magento-Vary=&#34;) {
+        hash_data(regsub(req.http.cookie, &#34;^.*?X-Magento-Vary=([^;]+);*.*$&#34;, &#34;\1&#34;));
+    }
+
+    # To make sure http users don&#39;t see ssl warning
+    if (req.http.X-Forwarded-Proto) {
+        hash_data(req.http.X-Forwarded-Proto);
+    }
+    
+
+    if (req.url ~ &#34;/graphql&#34;) {
+        call process_graphql_headers;
+    }
+}
+</code></pre>
+    </div>
+</div></li>
+</ul>
+</li>
+<li>
+<p><code>vcl_deliver</code>:</p>
+<ul>
+<li>Đặc điểm: được gọi ra ngay trước khi cache được return cho người dùng (trừ kết quả của sub vcl_synth)</li>
+<li>Tiến trình: kết thúc bằng 1 trong các return sau
+<ul>
+<li><code>return (deliver)</code>: trả response được cache cho người dùng.</li>
+<li><code>return (restart)</code>: bắt đầu lại quá trình chuyển request.</li>
+</ul>
+</li>
+<li>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Ví dụ
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <pre tabindex="0"><code>sub vcl_deliver {
+    if (resp.http.x-varnish ~ &#34; &#34;) {
+        set resp.http.X-Magento-Cache-Debug = &#34;HIT&#34;;
+        set resp.http.Grace = req.http.grace;
+    } else {
+        set resp.http.X-Magento-Cache-Debug = &#34;MISS&#34;;
+    }
+
+    # Not letting browser to cache non-static files.
+    if (resp.http.Cache-Control !~ &#34;private&#34; &amp;&amp; req.url !~ &#34;^/(pub/)?(media|static)/&#34;) {
+        set resp.http.Pragma = &#34;no-cache&#34;;
+        set resp.http.Expires = &#34;-1&#34;;
+        set resp.http.Cache-Control = &#34;no-store, no-cache, must-revalidate, max-age=0&#34;;
+    }
+
+    if (!resp.http.X-Magento-Debug) {
+        unset resp.http.Age;
+    }
+    unset resp.http.X-Magento-Debug;
+    unset resp.http.X-Magento-Tags;
+    unset resp.http.X-Powered-By;
+    unset resp.http.Server;
+    unset resp.http.X-Varnish;
+    unset resp.http.Via;
+    unset resp.http.Link;
+}
+</code></pre>
+    </div>
+</div></li>
+</ul>
+</li>
+<li>
+<p><code>vcl_purge</code>:</p>
+<ul>
+<li>Đặc điểm: được gọi ra khi quá trình purge bắt đầu</li>
+<li>Tiến trình: <code>return (restart)</code> để bắt đầu lại quá trình chuyển request.</li>
+</ul>
+</li>
+<li>
+<p><code>vcl_error</code>: được thực thi khi webserver bị lỗi không truy cập được để lấy dữ liệu</p>
+</li>
+</ul>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/1-server/1.3-services/" title="Các services"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/1-server/1.3-services/1.3.2-fastly-cdn/" title="Fastly CDN" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1751531075"></script>
+    <script src="/js/perfect-scrollbar.min.js?1751531075"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1751531075"></script>
+    <script src="/js/jquery.sticky.js?1751531075"></script>
+    <script src="/js/featherlight.min.js?1751531075"></script>
+    <script src="/js/highlight.pack.js?1751531075"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1751531075"></script>
+    <script src="/js/learn.js?1751531075"></script>
+    <script src="/js/hugo-learn.js?1751531075"></script>
+
+    <link href="/mermaid/mermaid.css?1751531075" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1751531075"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.133.0">
+    <meta name="description" content="">
+<meta name="author" content="technical@bsscommerce.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Các câu lệnh linux cơ bản :: RDS Wiki</title>
+
+    
+    <link href="/css/nucleus.css?1751531075" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1751531075" rel="stylesheet">
+    <link href="/css/hybrid.css?1751531075" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1751531075" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1751531075" rel="stylesheet">
+    <link href="/css/auto-complete.css?1751531075" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1751531075" rel="stylesheet">
+    <link href="/css/theme.css?1751531075" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1751531075" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1751531075" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1751531075"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/1-server/1.1-commandline/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="30%" viewBox="0 0 1200.000000 1200.000000" preserveAspectRatio="xMidYMid meet" style="margin-right: 9px;">
+        <g transform="translate(0.000000,1200.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+        <path d="M1490 9705 l0 -155 4563 2 4562 3 3 153 3 152 -4566 0 -4565 0 0 -155z"/>
+        <path d="M8580 8694 c-437 -35 -732 -232 -872 -582 -74 -186 -104 -382 -95 -632 9 -253 46 -416 137 -605 114 -236 323 -491 622 -756 143 -126 341 -323 406 -402 169 -207 236 -365 249 -592 13 -232 -47 -383 -177 -450 -97 -49 -243 -57 -355 -19 -78 27 -157 112 -186 200 -21 63 -23 92 -27 312 l-4 242 -344 0 -344 0 0 -195 c0 -227 11 -349 46 -494 73 -310 243 -527 509 -652 289 -136 732 -140 1035 -10 214 92 356 233 460 453 123 263 153 665 75 996 -88 368 -311 674 -822 1125 -290 257 -462 486 -523 697 -30 104 -39 336 -16 433 29 122 79 192 172 238 40 20 68 25 154 27 117 4 162 -5 231 -49 56 -35 94 -88 122 -166 16 -47 21 -92 25 -240 l4 -183 344 0 344 0 0 125 c0 746 -347 1150 -1010 1178 -63 2 -135 3 -160 1z"/>
+        <path d="M2350 6325 l0 -2315 360 0 360 0 0 945 0 945 158 0 c86 0 182 -4 212 -9 189 -31 291 -130 337 -328 13 -56 17 -175 23 -693 8 -643 12 -701 53 -815 l14 -40 367 -3 c289 -2 366 0 366 10 0 7 -7 33 -16 57 -45 129 -46 149 -54 806 -6 577 -9 640 -28 746 -55 303 -179 495 -394 609 -32 17 -58 34 -58 38 0 4 35 27 76 52 144 85 265 241 325 415 58 171 64 232 64 640 0 384 -5 457 -46 612 -99 376 -363 584 -801 632 -58 7 -344 11 -708 11 l-610 0 0 -2315z m1241 1629 c100 -46 155 -125 184 -259 21 -98 21 -729 1 -826 -36 -169 -142 -272 -307 -298 -35 -6 -139 -11 -231 -11 l-168 0 0 711 0 711 238 -4 c216 -3 241 -5 283 -24z"/>
+        <path d="M5002 6328 l3 -2313 645 1 c543 0 661 3 745 17 242 39 426 127 561 268 138 145 212 306 262 563 13 70 16 256 19 1346 5 1518 3 1564 -81 1812 -43 127 -104 231 -189 323 -119 130 -267 212 -476 263 l-106 26 -693 3 -692 4 2 -2313z m1320 1619 c94 -46 153 -134 177 -262 15 -82 15 -2628 0 -2710 -24 -132 -82 -215 -181 -261 l-63 -29 -262 -3 -263 -3 0 1651 0 1651 268 -3 267 -3 57 -28z"/>
+        <path d="M1490 2955 l0 -155 4565 0 4566 0 -3 153 -3 152 -4562 3 -4563 2 0 -155z"/>
+        </g>
+    </svg>
+    
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1751531075"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1751531075"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1751531075"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-server/" title="Server" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/1-server/">
+           <b> 1. </b> Server
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-server/1.1-commandline/" title="Các câu lệnh linux cơ bản" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/1-server/1.1-commandline/">
+           <b> 1.1 </b> Các câu lệnh linux cơ bản
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-server/1.2-additional/" title="Bổ xung" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-server/1.2-additional/">
+           <b> 1.2 </b> Bổ xung
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-server/1.2-additional/1.2.1-permission/" title="Phân Quyền" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-server/1.2-additional/1.2.1-permission/">
+           <b> 1.2.1 </b> Phân Quyền
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-server/1.2-additional/1.2.2-magento-cloud/" title="Magento Cloud" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-server/1.2-additional/1.2.2-magento-cloud/">
+           <b> 1.2.2 </b> Magento Cloud
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-server/1.2-additional/1.2.3-sshkey/" title="SSH Key" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-server/1.2-additional/1.2.3-sshkey/">
+           <b> 1.2.3 </b> SSH Key
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-server/1.3-services/" title="Các services" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-server/1.3-services/">
+           <b> 1.3 </b> Các services
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-server/1.3-services/1.3.1-varnish/" title="Varnish" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-server/1.3-services/1.3.1-varnish/">
+           <b> 1.3.1 </b> Varnish
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-server/1.3-services/1.3.2-fastly-cdn/" title="Fastly CDN" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-server/1.3-services/1.3.2-fastly-cdn/">
+           <b> 1.3.2 </b> Fastly CDN
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-system/" title="Hệ thống" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-system/">
+           <b> 2. </b> Hệ thống
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-system/2.1-xteam/" title="XTEAM" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-system/2.1-xteam/">
+           <b> 2.1 </b> XTEAM
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-system/2.2-uptimerobot/" title="UPTIMEROBOT" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-system/2.2-uptimerobot/">
+           <b> 2.2 </b> UPTIMEROBOT
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-system/2.3-monitor/" title="MONITOR" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-system/2.3-monitor/">
+           <b> 2.3 </b> MONITOR
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>30-09-2024</font></i>
+    </left>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>RDS WIKI</a> > <a href='/1-server/'>Server</a> > Các câu lệnh linux cơ bản
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#command-pwd"><strong>Command pwd</strong></a></li>
+        <li><a href="#command-whoami"><strong>Command whoami</strong></a></li>
+        <li><a href="#command-ls"><strong>Command ls</strong></a></li>
+        <li><a href="#command-cd"><strong>Command cd</strong></a></li>
+        <li><a href="#command-nano"><strong>Command nano</strong></a></li>
+        <li><a href="#command-mkdir"><strong>Command mkdir</strong></a></li>
+        <li><a href="#command-touch"><strong>Command touch</strong></a></li>
+        <li><a href="#command-cat"><strong>Command cat</strong></a></li>
+        <li><a href="#command-tail"><strong>Command tail</strong></a></li>
+        <li><a href="#command-head"><strong>Command head</strong></a></li>
+        <li><a href="#command-clear"><strong>Command clear</strong></a></li>
+        <li><a href="#command-rm"><strong>Command rm</strong></a></li>
+        <li><a href="#command-grep"><strong>Command grep</strong></a></li>
+        <li><a href="#command-find"><strong>Command find</strong></a></li>
+        <li><a href="#command-chown"><strong>Command chown</strong></a></li>
+        <li><a href="#command-chmod"><strong>Command chmod</strong></a></li>
+        <li><a href="#command-groups"><strong>Command groups</strong></a></li>
+        <li><a href="#command-useradd"><strong>Command useradd</strong></a></li>
+        <li><a href="#command-usermod"><strong>Command usermod</strong></a></li>
+        <li><a href="#command-su"><strong>Command su</strong></a></li>
+        <li><a href="#command-ping"><strong>Command ping</strong></a></li>
+        <li><a href="#command-telnet"><strong>Command telnet</strong></a></li>
+        <li><a href="#command-netstat"><strong>Command netstat</strong></a></li>
+        <li><a href="#command-du"><strong>Command du</strong></a></li>
+        <li><a href="#command-df"><strong>Command df</strong></a></li>
+        <li><a href="#command-which"><strong>Command which</strong></a></li>
+        <li><a href="#command-curl"><strong>Command curl</strong></a></li>
+        <li><a href="#command-zip"><strong>Command zip</strong></a></li>
+        <li><a href="#command-unzip"><strong>Command unzip</strong></a></li>
+        <li><a href="#command-tar"><strong>Command tar</strong></a></li>
+        <li><a href="#command-ssh"><strong>Command ssh</strong></a></li>
+        <li><a href="#command-scp"><strong>Command scp</strong></a></li>
+        <li><a href="#command-ssh-keygen"><strong>Command ssh-keygen</strong></a></li>
+        <li><a href="#command-ssh-copy-id"><strong>Command ssh-copy-id</strong></a></li>
+        <li><a href="#command-service"><strong>Command service</strong></a></li>
+        <li><a href="#command-systemctl"><strong>Command systemctl</strong></a></li>
+        <li><a href="#command-mysql"><strong>Command mysql</strong></a></li>
+        <li><a href="#command-mysqldump"><strong>Command mysqldump</strong></a></li>
+        <li><a href="#command-redis-cli"><strong>Command redis-cli</strong></a></li>
+        <li><a href="#command-varnish"><strong>Command varnish</strong></a></li>
+        <li><a href="#command-docker"><strong>Command docker</strong></a></li>
+        <li><a href="#command-docker-compose"><strong>Command docker-compose</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Các câu lệnh linux cơ bản
+            </h1>
+          
+
+        
+
+
+
+	
+<div class="notices tip" ><p>Với từng command, bạn có thể nhập <code>[command] --help</code> để hiển thị thông tin cùng các [OPTION] command hỗ trợ hoặc <code>[command] --version</code> để check phiên bản command.</p>
+</div>
+
+
+<div class="notices note" ><p>Luôn chú ý đến đường dẫn khi chạy lệnh.</p>
+</div>
+
+<h3 id="command-pwd"><strong>Command pwd</strong></h3>
+<ul>
+<li>Được dùng để tìm đường dẫn của folder hiện tại</li>
+<li>Trả về đường dẫn đầy đủ dẫn tới folder hiện tại</li>
+</ul>
+<p><img alt="pwd" src="/images/1/1/0001.png?featherlight=false&width=80pc"></p>
+<h3 id="command-whoami"><strong>Command whoami</strong></h3>
+<ul>
+<li>Dùng để lấy thông tin của người dùng đang đăng nhập trên server</li>
+</ul>
+<p><img alt="whoami" src="/images/1/1/0002.png?featherlight=false&width=80pc"></p>
+<h3 id="command-ls"><strong>Command ls</strong></h3>
+<ul>
+<li>Liệt kê các file/folder trong thư mục hiện tại</li>
+<li>Syntax: <code>ls -[OPTION] [FILE/FOLDER]</code></li>
+<li>Các <strong>[OPTION]</strong> hay sử dụng:
+<ul>
+<li><code>-a</code>: Liệt kê thêm các file/folder dạng .tên-file</li>
+<li><code>-R</code>: Liệt kê đệ quy(tất cả các file/folder bên trong)</li>
+<li><code>-l</code>: Thêm thông tin chi tiết của file/folder</li>
+<li><code>-s</code>: Sắp xếp theo dung lượng từ lớn đến bé</li>
+<li><code>-r</code>: Đảo ngược thứ tự khi sắp xếp</li>
+</ul>
+</li>
+</ul>
+<p><img alt="ls" src="/images/1/1/0003.png?featherlight=false&width=80pc"></p>
+<p><img alt="ls2" src="/images/1/1/0043.png?featherlight=false&width=80pc"></p>
+<h3 id="command-cd"><strong>Command cd</strong></h3>
+<ul>
+<li>Dùng để di chuyển giữa các thư mục</li>
+<li>Sử dụng tab để hệ thống gợi ý/tự động hoàn thiện tên folder muốn trỏ đến</li>
+<li>Syntax: <code>cd [FOLDER/PATH]</code></li>
+<li>Trở về folder cấp cao hơn sử dụng <code>cd ..</code>, áp dụng nhiều cấp</li>
+<li>Trở về folder ngay trước khi mình cd sử dụng <code>cd -</code></li>
+<li>Trở về thư mục khi login ssh sử dụng <code>cd</code> hoặc <code>cd ~</code></li>
+</ul>
+<p><img alt="cd" src="/images/1/1/0004.png?featherlight=false&width=80pc"></p>
+<h3 id="command-nano"><strong>Command nano</strong></h3>
+<ul>
+<li>Là 1 trình soạn thảo văn bản đơn giản trên terminal (tương tự notepad)</li>
+<li>Syntax: <code>nano -[OPTION] [FILE]</code></li>
+<li>Các <strong>[OPTION]</strong> hay sử dụng:
+<ul>
+<li><code>-w</code>: Mở file định dạng chuẩn</li>
+<li><code>-l</code>: Hiển thị số dòng</li>
+<li><code>-nX</code> hoặc <code>+X</code>: Mở file tại dòng số X</li>
+<li><code>-B</code>: Backup file</li>
+</ul>
+</li>
+</ul>
+<p><img alt="nano1" src="/images/1/1/0005.png?featherlight=false&width=80pc"></p>
+<ul>
+<li>Các thao tác hay sử dụng khi vào trình soạn thảo:
+<ul>
+<li>Tìm kiếm text: Ctrl W</li>
+<li>Thay thế text: Ctrl \</li>
+<li>Xoá dòng hiện tại: Ctrk K</li>
+<li>Đi tới dòng: Ctrl _</li>
+<li>Lưu file: Ctrl S</li>
+<li>Thoát: Ctrl X
+<ul>
+<li>Trường hợp file đã chỉnh sửa mà muốn lưu: Y + enter</li>
+<li>Trường hợp file đã chỉnh sửa mà không muốn lưu: N</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img alt="nano2" src="/images/1/1/0006.png?featherlight=false&width=80pc"></p>
+<h3 id="command-mkdir"><strong>Command mkdir</strong></h3>
+<ul>
+<li>Tạo folder mới</li>
+<li>Syntax: <code>mkdir -[OPTION] [DIRECTORY]</code></li>
+<li>Các <strong>[OPTION]</strong> hay sử dụng:
+<ul>
+<li><code>-p</code>: Tạo folder cha nếu chưa tồn tại</li>
+</ul>
+</li>
+</ul>
+<p><img alt="mkdir" src="/images/1/1/0007.png?featherlight=false&width=80pc"></p>
+<h3 id="command-touch"><strong>Command touch</strong></h3>
+<ul>
+<li>Tạo file mới</li>
+<li>Syntax: <code>touch -[OPTION] [FILENAME]</code></li>
+</ul>
+<p><img alt="touch" src="/images/1/1/0008.png?featherlight=false&width=80pc"></p>
+<h3 id="command-cat"><strong>Command cat</strong></h3>
+<ul>
+<li>Dùng để in nội dung file</li>
+<li>Syntax: <code>cat -[OPTION] [FILENAME]</code></li>
+</ul>
+<p><img alt="cat" src="/images/1/1/0009.png?featherlight=false&width=80pc"></p>
+<h3 id="command-tail"><strong>Command tail</strong></h3>
+<ul>
+<li>In ra console 10 dòng (mặc định) cuối của file</li>
+<li>Syntax: <code>tail -[OPTION] [FILENAME]</code></li>
+<li>Các <strong>[OPTION]</strong> hay sử dụng:
+<ul>
+<li><code>-nX</code>: In ra X dòng cuối.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="tail" src="/images/1/1/0010.png?featherlight=false&width=80pc"></p>
+<h3 id="command-head"><strong>Command head</strong></h3>
+<ul>
+<li>In ra console 10 dòng (mặc định) đầu của file</li>
+<li>Syntax: <code>head -[OPTION] [FILENAME]</code></li>
+<li>Các <strong>[OPTION]</strong> hay sử dụng:
+<ul>
+<li><code>-nX</code>: In ra X dòng.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="head" src="/images/1/1/0011.png?featherlight=false&width=80pc"></p>
+<h3 id="command-clear"><strong>Command clear</strong></h3>
+<ul>
+<li>Xoá nội dung trong màn console (dọn dẹp)</li>
+</ul>
+<h3 id="command-rm"><strong>Command rm</strong></h3>
+<ul>
+<li>Xoá file/folder.</li>
+<li>Syntax: <code>rm -[OPTION] [FILENAME]</code></li>
+<li>Các <strong>[OPTION]</strong> hay sử dụng:
+<ul>
+<li><code>-f</code>: Không hỏi lại, xoá cả trong trường hợp file/folder không tồn tại</li>
+<li><code>-r</code>: Xoá tất cả files/folders nằm bên trong (đệ quy)</li>
+<li><code>-d</code>: Xoá các các folders rỗng</li>
+</ul>
+</li>
+</ul>
+<p><img alt="rm" src="/images/1/1/0012.png?featherlight=false&width=80pc"></p>
+<h3 id="command-grep"><strong>Command grep</strong></h3>
+<ul>
+<li>Tìm kiếm mẫu text</li>
+<li>Syntax: <code>grep -[OPTIONS] PATTERN [FILE...]</code></li>
+<li>Các <strong>[OPTION]</strong> hay sử dụng:
+<ul>
+<li><code>-R</code> hoặc <code>-r</code>: Tìm kiếm đệ quy (các file/folder con)</li>
+<li><code>-l</code>: Chỉ hiển thị tên file</li>
+<li><code>-n</code>: Hiển thị số dòng khớp mẫu</li>
+<li><code>-c</code>: Đếm số mẫu khớp</li>
+<li><code>-i</code>: Không phân biệt hoa thường</li>
+</ul>
+</li>
+</ul>
+<p><img alt="grep" src="/images/1/1/0013.png?featherlight=false&width=80pc"></p>
+<h3 id="command-find"><strong>Command find</strong></h3>
+<ul>
+<li>Được sử dụng để tìm kiếm files và folders trong hệ thống tập tin dựa trên các tiêu chí khác nhau</li>
+<li>Syntax: <code>find [PATH] [OPTIONS]</code></li>
+<li>Các <strong>[OPTIONS]</strong> hay sử dụng:
+<ul>
+<li>Tìm theo tên: -name &ldquo;[PATTERN]&rdquo; (phân biệt hoa thường) &gt;&lt; -iname &ldquo;[PATTERN]&rdquo; (không phân biệt hoa thường)</li>
+<li>Tìm theo loại:
+<ul>
+<li>Folder: <code>-type d</code></li>
+<li>File: <code>-type f</code></li>
+</ul>
+</li>
+<li>Tìm theo kích thước (c: byte, k: KB, M: MB, G: GB)
+<ul>
+<li>Lớn hơn 10MB: <code>-size +10M</code></li>
+<li>Nhỏ hơn 10MB: <code>-size -10M</code></li>
+</ul>
+</li>
+<li>Tìm theo ngày chỉnh sửa:
+<ul>
+<li>Trong 7 ngày gần nhất: <code>-mtime -7</code></li>
+<li>Trước đó 7 ngày so với hiện tại: <code>-mtime +7</code></li>
+</ul>
+</li>
+<li>Thực thi một lệnh trên mỗi tệp khớp: <code>-exec [COMMAND] {} \;</code></li>
+<li>Tìm với quyền cụ thể: <code>-perm [PERMISSION]</code></li>
+<li>Tìm với user cụ thể: <code>-user [USER]</code></li>
+<li>Tìm với group cụ thể: <code>-group [GROUP]</code></li>
+<li>Giới hạn mức độ đệ quy: <code>-maxdepth [NUMBER]</code></li>
+</ul>
+</li>
+<li>Ví dụ sử dụng lệnh phân quyền file/folder trong magento: <code>find app/code lib var generated vendor pub/static pub/media app/etc \( -type d -or -type f \) -exec chmod g+w {} \;</code></li>
+</ul>
+<p><img alt="find" src="/images/1/1/0014.png?featherlight=false&width=80pc"></p>
+<h3 id="command-chown"><strong>Command chown</strong></h3>
+<ul>
+<li>Được sử dụng để thay đổi quyền sở hữu (owner/group) của file và folder</li>
+<li>Syntax: <code>chown [OPTIONS] [USER]:[GROUP] [FILE/FOLDER]</code></li>
+<li>Các <strong>[OPTIONS]</strong> hay sử dụng:
+<ul>
+<li><code>-R</code>: Phân quyền đệ quy (cả các file/folder con)</li>
+</ul>
+</li>
+</ul>
+
+<div class="notices note" ><p>Có thể điền 1 trong 2 <strong>[USER]</strong> và <strong>[GROUP]</strong> nhưng vẫn cần phải giữ lại dấu <code>:</code></p>
+</div>
+
+<p><img alt="chown" src="/images/1/1/0015.png?featherlight=false&width=80pc"></p>
+
+<div class="notices info" ><p>Để biết thêm về phân quyền, truy cập <a href="/1-server/1.2-additional/1.2.1-permission/">link sau</a></p>
+</div>
+
+<h3 id="command-chmod"><strong>Command chmod</strong></h3>
+<ul>
+<li>Được sử dụng để thay đổi quyền truy cập (permissions) của file và folder</li>
+<li>Syntax: <code>chmod [OPTIONS] [MODE] [FILE/FOLDER]</code></li>
+<li>Các <strong>[OPTIONS]</strong> hay sử dụng:
+<ul>
+<li><code>-R</code>: Phân quyền đệ quy (cả các file/folder con)</li>
+</ul>
+</li>
+</ul>
+<p><img alt="chmod" src="/images/1/1/0016.png?featherlight=false&width=80pc"></p>
+
+<div class="notices info" ><p>Để biết thêm về phân quyền, truy cập <a href="/">link sau</a></p>
+</div>
+
+<h3 id="command-groups"><strong>Command groups</strong></h3>
+<ul>
+<li>In ra các groups mà <strong>[USER]</strong> thuộc, nếu không điền <strong>[USER]</strong> thì sẽ in ra của chính user hiện tại</li>
+<li>Syntax: <code>groups [USER]</code></li>
+</ul>
+<p><img alt="groups" src="/images/1/1/0017.png?featherlight=false&width=80pc"></p>
+<h3 id="command-useradd"><strong>Command useradd</strong></h3>
+<ul>
+<li>Được sử dụng để tạo tài khoản người dùng mới trên hệ thống</li>
+<li>Syntax: <code>useradd [OPTION] [USERNAME]</code></li>
+<li>Các <strong>[OPTION]</strong> hay sử dụng:
+<ul>
+<li><code>-s [SHELL]</code>  (thường là /bin/bash): Chỉ định shell đăng nhập của người dùng</li>
+<li><code>-p $(openssl passwd -1 [PASSWORD])</code>: Chỉ định mật khẩu cho người dùng</li>
+<li><code>-G [GROUP1,GROUP2,...]</code>: Thêm người dùng vào các groups</li>
+<li><code>-u [UID]</code>: Tạo người dùng mới với UID cụ thể</li>
+<li><code>-d [HOME_DIR]</code>: Chỉ định thư mục chính (home directory)</li>
+<li><code>-m</code>: Tạo thư mục chính nếu chưa tồn tại</li>
+</ul>
+</li>
+</ul>
+<p><img alt="useradd" src="/images/1/1/0018.png?featherlight=false&width=80pc"></p>
+<h3 id="command-usermod"><strong>Command usermod</strong></h3>
+<ul>
+<li>Được sử dụng để thay đổi thông tin chi tiết của tài khoản người dùng hiện có trên hệ thống</li>
+<li>Syntax: <code>usermod [OPTION] [USER]</code></li>
+<li>Các <strong>[OPTION]</strong> hay sử dụng (tương tự như useradd và bổ xung thêm vài option sau):
+<ul>
+<li><code>-aG [GROUP]</code>: Thêm groups (không có optino <code>a</code> thì các groups hiện có sẽ bị xoá)</li>
+<li><code>-l [NEW_USER] [OLD_USER]</code>: Đổi tên người dùng</li>
+<li><code>-L</code>: Vô hiệu hóa mật khẩu</li>
+<li><code>-U</code>: Kích hoạt lại mật khẩu</li>
+</ul>
+</li>
+</ul>
+<p><img alt="usermod" src="/images/1/1/0019.png?featherlight=false&width=80pc"></p>
+<h3 id="command-su"><strong>Command su</strong></h3>
+<ul>
+<li>Dùng để switch user trong phiên ssh</li>
+<li>Syntax: <code>su [OPTION] [-] [USSER [ARGUMENT...]]</code></li>
+<li>Thường không sử dụng tới <strong>[ARGUMENT]</strong></li>
+<li>Thêm option <strong>[-]</strong> để truy cập vào home directory của <strong>[USER]</strong></li>
+<li>Có thể truy cập root bằng command: <code>sudo -i</code></li>
+</ul>
+<p><img alt="su" src="/images/1/1/0020.png?featherlight=false&width=80pc"></p>
+<h3 id="command-ping"><strong>Command ping</strong></h3>
+<ul>
+<li>Được sử dụng để kiểm tra kết nối mạng giữa server và một địa chỉ IP hoặc tên miền cụ thể</li>
+<li>Syntax: <code>ping [OPTIONS] [DESTINATION]</code></li>
+<li>Các <strong>[OPTION]</strong> hay sử dụng:
+<ul>
+<li><code>-c [COUNT]</code>: Số lượng gói tin sẽ được gửi:</li>
+<li><code>-i [INTERVAL]</code>: Khoảng thời gian (second) giữa các gói tin</li>
+<li><code>-s [PACKET_SIZE]</code>: Kích thước của mỗi gói tin gửi đi (mặc định là 56 bytes)</li>
+<li><code>-W</code>: Thiết lập thời gian chờ (second) cho mỗi phản hồi</li>
+<li><code>-q</code>: Chỉ hiển thị kết quả tóm tắt khi hoàn thành</li>
+<li><code>-n</code>: Chuyển sang dạng IP thay vì tên miền</li>
+</ul>
+</li>
+</ul>
+<p><img alt="ping" src="/images/1/1/0021.png?featherlight=false&width=80pc"></p>
+<h3 id="command-telnet"><strong>Command telnet</strong></h3>
+<ul>
+<li>Được sử dụng để tạo một kết nối Telnet tới một máy tính từ xa tương tự như ssh (thường được sử dụng để kiểm tra port có mở hay không vì bảo mật khá kém)</li>
+<li>Syntax: <code>telnet [OPTIONS] [HOST] [PORT]</code></li>
+<li>Ví dụ: <code>telnet localhost 22</code></li>
+</ul>
+<p><img alt="telnet" src="/images/1/1/0022.png?featherlight=false&width=80pc"></p>
+<h3 id="command-netstat"><strong>Command netstat</strong></h3>
+<ul>
+<li>Được sử dụng để hiển thị thông tin chi tiết về các kết nối mạng, bảng định tuyến, thống kê giao thức và các socket (cả TCP và UDP) đang hoạt động trên hệ thống</li>
+<li>Thường được dùng để kiểm tra kết nốt các cổng trên server</li>
+<li>Syntax: <code>netstat [OPTIONS]</code></li>
+<li>Các <strong>[OPTION]</strong> hay sử dụng:
+<ul>
+<li><code>-a</code>: Hiển thị tất cả các kết nối mạng và socket</li>
+<li><code>-t</code>: Hiển thị các kết nối TCP</li>
+<li><code>-u</code>: Hiển thị các kết nối UDP</li>
+<li><code>-l</code>: Hiển thị các socket đang lắng nghe</li>
+<li><code>-n</code>: Hiển thị địa chỉ và số port dưới dạng số</li>
+<li><code>-p</code>: Hiển thị thông tin về chương trình sử dụng socket</li>
+</ul>
+</li>
+</ul>
+<p><img alt="netstat" src="/images/1/1/0023.png?featherlight=false&width=80pc"></p>
+
+<div class="notices note" ><p>Sử dụng user root hoặc sudo để có quyền xem tất cả thông tin: <code>netstat -tulpn</code></p>
+</div>
+
+<h3 id="command-du"><strong>Command du</strong></h3>
+<ul>
+<li>Trả về mức sử dụng ổ đĩa (disk) của các files/folders cụ thể</li>
+<li>Syntax: <code>du [OPTION] [FILE/FOLDER]</code></li>
+<li>Các <strong>[OPTION]</strong> hay sử dụng:
+<ul>
+<li><code>-c</code>: Thêm 1 dòng tổng dung lượng vào cuối</li>
+<li><code>-h</code>: In thông số dạng kb, mb, gb (human-readable)</li>
+<li><code>-s</code>: In tổng quát của file/foler gốc</li>
+<li><code>--exclude-from=[FILE]</code> <strong>hoặc</strong> <code>--exclude=[PATH]</code>: In tất cả ngoại trừ folder</li>
+</ul>
+</li>
+</ul>
+
+<div class="notices note" ><p>Có thể kết hợp command sort để sắp xếp: <code>du -csh * | sort -rh</code>. Sử dụng command này kèm command zip/rm để lưu trữ/loại bỏ những file/folder quá lớn/dư thừa.</p>
+</div>
+
+<p><img alt="du" src="/images/1/1/0024.png?featherlight=false&width=80pc"></p>
+<h3 id="command-df"><strong>Command df</strong></h3>
+<ul>
+<li>Trả về thông tin ổ cứng mà file/folder thuộc về (mặc định trả về full các ổ)</li>
+<li>Syntax: <code>df [OPTION] [FILE]</code></li>
+<li>Thưởng chỉ sử dụng option <code>-h</code> để hiện thị dữ liệu dạng human-readable</li>
+<li>Ví dụ: <code>df -h</code></li>
+</ul>
+<p><img alt="df" src="/images/1/1/0025.png?featherlight=false&width=80pc"></p>
+<h3 id="command-which"><strong>Command which</strong></h3>
+<ul>
+<li>Trả về đường dẫn tới command khi được execute</li>
+<li>Syntax: <code>which [COMMAND]</code></li>
+</ul>
+<p><img alt="which" src="/images/1/1/0026.png?featherlight=false&width=80pc"></p>
+<h3 id="command-curl"><strong>Command curl</strong></h3>
+<ul>
+<li>
+<p>Truyền dữ liệu từ hoặc đến một máy chủ, sử dụng nhiều giao thức khác nhau (mình thường sử dụng để check header domain và download file =))))</p>
+</li>
+<li>
+<p>Syntax: <code>curl [OPTIONS] [URL]</code></p>
+</li>
+<li>
+<p>Các <strong>[OPTION]</strong> hay sử dụng:</p>
+<ul>
+<li><code>-O [URL] -O [URL]...</code>: Tải về và giữ nguyên tên file (áp dụng cho nhiều files)</li>
+<li><code>-o [FILENAME] [URL] -o [FILENAME] [URL]...</code>: Tải về và đổi tên file (cũng áp dụng cho nhiều files)</li>
+<li><code>-I</code>: Lấy header content</li>
+<li><code>-X [METHOD]</code>: Sử dụng phương thức HTTP cụ thể (GET, POST, PUT, DELETE, etc.)</li>
+<li><code>-d &quot;param1=value1&amp;param2=value2&quot;</code>: Gửi dữ liệu dạng param</li>
+<li><code>-H &quot;HEADER: VALUE&quot;</code> (vd: <code>-H &quot;Content-Type: application/json&quot;</code>): Thêm header</li>
+</ul>
+</li>
+<li>
+<p>Ví dụ tải về adminer ver 4.8.1 với filename = adm.php: <code>curl -o adm.php https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1-mysql-en.php</code></p>
+</li>
+</ul>
+<p><img alt="curl" src="/images/1/1/0027.png?featherlight=false&width=80pc"></p>
+<h3 id="command-zip"><strong>Command zip</strong></h3>
+<ul>
+<li>Nén file/folder vào 1 file nén dạng .zip</li>
+<li>Syntax: <code>zip [OPTIONS] [ZIPFILE] [FILES/FOLDER]</code></li>
+<li>Các <strong>[OPTION]</strong> hay sử dụng:
+<ul>
+<li><code>-r</code>: Nén đệ quy tất cả các tệp và thư mục con</li>
+<li><code>-q</code>: Không hiển thị thông tin trong quá trình nén</li>
+<li><code>-x [FILE/FOLDER] [FILE/FOLDER]...</code>: Nén tất cả ngoại trừ các file/folder</li>
+</ul>
+<blockquote>
+<p>Với folder thì cần bổ xung <code>**\*</code>, ví dụ: <code>code/**\*</code></p>
+</blockquote>
+<ul>
+<li><code>-e</code>: Đặt mật khẩu</li>
+<li><code>-1</code> tới <code>-9</code>: Nén nhanh nhất cho tới nhẹ nhất</li>
+</ul>
+</li>
+<li>Ví dụ clone code site khách: <code>zip -rqe clone_27_05.zip * -x pub/media/catalog/**\* pub/static/frontend/**\* var/**\* generated/code/**\*</code></li>
+</ul>
+<p><img alt="zip" src="/images/1/1/0028.png?featherlight=false&width=80pc"></p>
+
+<div class="notices info" ><p>Command trên chưa nén các file/folder dạng .filename như <code>.git/ .gitignore .htaccess</code> nên tuỳ nhu cầu sẽ bổ xung vào ngay trước option -x</p>
+</div>
+
+<h3 id="command-unzip"><strong>Command unzip</strong></h3>
+<ul>
+<li>Giải nén file dạng .zip</li>
+<li>Syntax: <code>unzip [OPTIONS] [ZIPFILE]</code></li>
+<li>Các <strong>[OPTION]</strong> hay sử dụng:
+<ul>
+<li><code>-d [FOLDER]</code>: Chỉ định thư mục đích</li>
+<li><code>-o</code>: Ghi đè các tệp hiện có mà không cần hỏi</li>
+<li><code>-q</code>: Không hiển thị thông tin trong quá trình giải nén</li>
+<li><code>-l</code>: Liệt kê nội dung của tệp ZIP mà không giải nén</li>
+</ul>
+</li>
+<li>Sau khi download file clone (có thể sử dụng cả scp hoặc curl), giải nén: <code>unzip -oq clone_27_05.zip -d /var/www/html/v522-dev</code></li>
+</ul>
+<p><img alt="unzip" src="/images/1/1/0029.png?featherlight=false&width=80pc"></p>
+<h3 id="command-tar"><strong>Command tar</strong></h3>
+<ul>
+<li>Được sử dụng để lưu trữ nhiều tệp và thư mục vào một tệp lưu trữ duy nhất (file.tar). Kết hợp với gzip/bzip2 để nén file đó thành dạng file.tar.gz hoặc file.tar.bz2 (tương tự zip)</li>
+<li>Syntax: <code>tar [OPTIONS] [ARCHIVE] [FILES]</code></li>
+<li>Các <strong>[OPTION]</strong> hay sử dụng:
+<ul>
+<li><code>-c</code>: Tạo tệp mới</li>
+<li><code>-v</code>: Hiển thị thông tin chi tiết trong quá trình thực thi</li>
+<li><code>-z</code>: Nén bằng gzip</li>
+<li><code>-j</code>: Nén bằng bzip2</li>
+<li><code>-f</code>: Chỉ định tên tệp lưu trữ</li>
+<li><code>-x</code>: Giải nén tệp lưu trữ</li>
+<li><code>-t</code>: Liệt kê nội dung của tệp lưu trữ mà không giải nén</li>
+<li><code>-C [PATH]</code>: Chuyển đến thư mục trước khi giải nén</li>
+</ul>
+</li>
+</ul>
+<p><img alt="tar" src="/images/1/1/0030.png?featherlight=false&width=80pc"></p>
+<h3 id="command-ssh"><strong>Command ssh</strong></h3>
+<ul>
+<li>Được sử dụng để kết nối với một máy tính từ xa và thực thi các lệnh trên đó</li>
+<li>Syntax: <code>ssh [OPTIONS] [USER]@[HOST]</code> trong đó
+<ul>
+<li><strong>[USER]</strong> là tên người dùng để login</li>
+<li><strong>[HOST]</strong> là máy chủ login</li>
+</ul>
+</li>
+<li>Các <strong>[OPTION]</strong> hay sử dụng:
+<ul>
+<li><code>-p [PORT]</code>: Chỉ định cổng kết nối (mặc định <strong>[PORT]</strong> = 22)</li>
+<li><code>-i [KEYFILE]</code>: Chỉ định tệp khoá (dạng key, key.pem,&hellip;)</li>
+</ul>
+</li>
+</ul>
+<p><img alt="ssh" src="/images/1/1/0031.png?featherlight=false&width=80pc"></p>
+<h3 id="command-scp"><strong>Command scp</strong></h3>
+<ul>
+<li>Được sử dụng để sao chép tệp tin và thư mục giữa các máy tính qua kết nối SSH</li>
+<li>Syntax: <code>scp [OPTIONS] [USER]@[HOST]:[SRC] [USER]@[HOST]:DEST</code></li>
+<li>Các <strong>[OPTION]</strong> hay sử dụng:
+<ul>
+<li><code>-P [port]</code>: Chỉ định cổng kết nối SSH</li>
+<li><code>-i [KEYFILE]</code>: Chỉ định tệp khoá (dạng key, key.pem,&hellip;)</li>
+<li><code>-r</code>: Sao chép đệ quy toàn bộ thư mục và các tệp con</li>
+<li><code>-v</code>: Hiển thị thông tin chi tiết trong quá trình sao chép</li>
+</ul>
+</li>
+</ul>
+<p><img alt="scp" src="/images/1/1/0032.png?featherlight=false&width=80pc"></p>
+
+<div class="notices note" ><p>Để upload từ file ở session ssh hiện tại (hoặc local) thì không cần cặp <strong>[USER]@[HOST]</strong> thứ 1 (download thì cặp thứ 2). Chỉ cần đường dẫn tới file/folder đó.</p>
+</div>
+
+<h3 id="command-ssh-keygen"><strong>Command ssh-keygen</strong></h3>
+<ul>
+<li>Được sử dụng để tạo, quản lý và chuyển đổi key</li>
+<li>Syntax: <code>ssh-keygen [OPTIONS]</code></li>
+<li>Các <strong>[OPTION]</strong> hay sử dụng:
+<ul>
+<li><code>-t [TYPE]</code>: Xác định loại thuật toán để tạo khóa (các <strong>[TYPE]</strong> phổ biển: RSA, DSA, ECDSA, và ED25519)</li>
+<li><code>-b [BIT]</code>: Xác định độ dài của khóa (tính bằng bit) (thông thường là 2048 hoặc 4096 cho RSA)</li>
+<li><code>-C [COMMENT]</code>: thêm comment vào khoá, thường là thông tin nhận dạng như email.</li>
+<li><code>-f [FILE]</code>: xác định tên file và đường dẫn lưu key</li>
+<li><code>-N [PASSPHRASE]</code>: thiết lập passpharse, dể rỗng nếu không muốn sử dụng.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="ssh-keygen" src="/images/1/1/0041.png?featherlight=false&width=80pc"></p>
+<h3 id="command-ssh-copy-id"><strong>Command ssh-copy-id</strong></h3>
+<ul>
+<li>Dùng để sao chép public key vào remote server, giúp thiết lập xác thực không mật khẩu với SSH.</li>
+<li>Syntax: <code>ssh-copy-id [OPTIONS] [USER]@[HOST]</code></li>
+<li>Các <strong>[OPTION]</strong> hay sử dụng:
+<ul>
+<li><code>-p [PORT]</code>: Chỉ định cổng kết nối (mặc định <strong>[PORT]</strong> = 22)</li>
+<li><code>-i [KEYFILE]</code>: Chỉ định tệp public key (mặc định <strong>[KEYFILE]</strong> = ~/.ssh/id_rsa)</li>
+<li><code>-f</code>: Buộc sao chép key ngay cả khi key đã tồn tại</li>
+</ul>
+</li>
+</ul>
+<p><img alt="ssh-copy-id" src="/images/1/1/0042.png?featherlight=false&width=80pc"></p>
+<h3 id="command-service"><strong>Command service</strong></h3>
+<ul>
+<li>Được sử dụng để khởi động, dừng và quản lý các dịch vụ hệ thống</li>
+<li>Syntax: <code>service [SERVICE_NAME] [COMMAND]</code> trong đó:
+<ul>
+<li><code>SERVICE_NAME</code> là tên của dịch vụ.</li>
+<li><code>COMMAND</code> là hành động cần thực hiện (start, stop, restart, status, &hellip;).</li>
+</ul>
+</li>
+<li>Các <strong>[COMMAND]</strong> hay sử dụng:
+<ul>
+<li><code>start</code>: Khởi động dịch vụ.</li>
+<li><code>stop</code>: Dừng dịch vụ.</li>
+<li><code>restart</code>: Khởi động lại dịch vụ, stop =&gt; start.</li>
+<li><code>reload</code>: Tải lại cấu hình của dịch vụ mà không khởi động lại.</li>
+<li><code>status</code>: Kiểm tra trạng thái của dịch vụ.</li>
+<li><code>enable</code>: Kích hoạt dịch vụ để tự động khởi động khi hệ thống khởi động.</li>
+<li><code>disable</code>: Vô hiệu hóa dịch vụ để không tự động khởi động khi hệ thống khởi động.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="service" src="/images/1/1/0033.png?featherlight=false&width=80pc"></p>
+<h3 id="command-systemctl"><strong>Command systemctl</strong></h3>
+<ul>
+<li>Một công cụ quản lý dịch vụ mạnh mẽ và linh hoạt hơn <strong>service</strong>, được sử dụng với systemd</li>
+<li>Syntax: <code>systemctl [OPTIONS] [COMMAND] [SERVICE_NAME]</code></li>
+<li>Các <strong>[COMMAND]</strong> cơ bản tương tự như <strong>service</strong> và bổ xung:
+<ul>
+<li><code>is-active</code>: Kiểm tra xem dịch vụ có đang chạy không.</li>
+<li><code>is-enabled</code>: Kiểm tra xem dịch vụ có được kích hoạt không.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="systemctl" src="/images/1/1/0034.png?featherlight=false&width=80pc"></p>
+<h3 id="command-mysql"><strong>Command mysql</strong></h3>
+<ul>
+<li>Được sử dụng để kết nối và tương tác với máy chủ MySQL từ dòng lệnh (thường để check connection)</li>
+<li>Syntax: <code>mysql [OPTIONS]</code></li>
+<li>Các <strong>[OPTION]</strong> hay sử dụng:
+<ul>
+<li><code>-u USER</code>: Chỉ định tên người dùng MySQL</li>
+<li><code>-p</code>: Prompt nhập mật khẩu, có thể sử dụng <code>-pPASSWORD</code> nếu không muốn hiện prompt (không khuyến cáo vì lộ mật khẩu).</li>
+<li><code>-h HOST</code>: Chỉ định máy chủ MySQL (mặc định là localhost).</li>
+<li><code>-P PORT</code>: Chỉ định cổng kết nối MySQL (mặc định là 3306).</li>
+<li><code>-e &quot;SQL_QUERY&quot;</code>: Thực thi câu lệnh SQL từ dòng lệnh.</li>
+<li><code>-v</code>: mode debug, hiển thị tiến trình</li>
+</ul>
+</li>
+</ul>
+<p><img alt="mysql" src="/images/1/1/0035.png?featherlight=false&width=80pc"></p>
+<ul>
+<li>Command import, thêm option <strong>&lt;</strong>: <code>mysql -u user -p database &lt; file_dump.sql</code></li>
+</ul>
+<p><img alt="mysql" src="/images/1/1/0036.png?featherlight=false&width=80pc"></p>
+<h3 id="command-mysqldump"><strong>Command mysqldump</strong></h3>
+<ul>
+<li>Được sử dụng để kết nối và tương tác với máy chủ MySQL phục vụ việc export databases/tables.</li>
+<li>Syntax: <code>mysqldump [OPTIONS] [DB_NAME] [TABLES]</code></li>
+<li>Các <strong>[OPTION]</strong> hay sử dụng, tương tự như mysql nhưng bổ xung các <strong>[OPTIONS]</strong> phục vụ việc export như:
+<ul>
+<li><code>--opt</code>: Tối ưu hóa quá trình xuất dữ liệu (thường được bật sẵn mặc định) bằng cách kết hợp nhiều tùy chọn khác nhau gồm:
+<ul>
+<li><code>--add-drop-table</code>: Thêm câu lệnh <code>DROP TABLE</code> trước mỗi câu lệnh <code>CREATE TABLE</code>.</li>
+<li><code>--add-locks</code>: Thêm các câu lệnh <code>LOCK TABLES</code> và <code>UNLOCK TABLES</code> trước và sau khi chèn dữ liệu.</li>
+<li><code>--create-options</code>: Bao gồm tất cả các tùy chọn của bảng trong câu lệnh <code>CREATE TABLE</code>.</li>
+<li><code>--disable-keys</code>: Tạm thời vô hiệu hóa các primary/foreign keys khi chèn dữ liệu.</li>
+<li><code>--extended-insert</code>: Sử dụng câu lệnh <code>INSERT</code> mở rộng, giúp giảm kích thước tệp xuất.</li>
+<li><code>--quick</code>: Đọc hàng từ bảng một cách nhanh chóng mà không lưu trữ toàn bộ bảng trong bộ nhớ.</li>
+<li><code>--lock-tables</code>: Khóa tất cả các bảng để đảm bảo tính nhất quán trong bản sao lưu.</li>
+</ul>
+</li>
+<li><code>--complete-insert</code>: Tạo ra các câu lệnh <code>INSERT</code> với đầy đủ tên các cột, đảm bảo tính toàn vẹn khi nhập lại dữ liệu.</li>
+<li><code>--single-transaction</code>: Đảm bảo tính nhất quán dữ liệu khi sao lưu (chỉ dành cho InnoDB).</li>
+<li><code>--verbose</code>: Chế độ debug, hiển thị thêm thông tin về tiến trình import.</li>
+<li><code>--add-drop-database</code>: Thêm câu lệnh DROP DATABASE trước khi tạo lại cơ sở dữ liệu (phù hợp với user có quyền <code>CREATE DATABASE</code>).</li>
+<li><code>--all-databases</code>: Sao lưu tất cả các cơ sở dữ liệu.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="mysqldump" src="/images/1/1/0037.png?featherlight=false&width=80pc"></p>
+
+<div class="notices note" ><p>Để biết thêm về các options bổ xung, <a href="https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html">truy cập link sau</a>.</p>
+</div>
+
+<h3 id="command-redis-cli"><strong>Command redis-cli</strong></h3>
+<ul>
+<li>
+<p>Được sử dụng để tương tác với máy chủ Redis từ dòng lệnh như quản lý cơ sở dữ liệu, kiểm tra trạng thái,&hellip;</p>
+</li>
+<li>
+<p>Syntax: <code>redis-cli [OPTION] [COMMAND] [ARGUMENT]</code></p>
+<ul>
+<li><strong>options</strong>: Các tùy chọn cấu hình kết nối.</li>
+<li><strong>command</strong>: Lệnh Redis để thực thi.</li>
+<li><strong>arguments</strong>: Các đối số của lệnh Redis.</li>
+</ul>
+</li>
+<li>
+<p>Các <strong>[OPTION]</strong> hay sử dụng:</p>
+<ul>
+<li><code>-h</code>: Chỉ định host.</li>
+<li><code>-p</code>: Chỉ định port.</li>
+<li><code>-a</code>: Chỉ định mật khẩu.</li>
+<li><code>-n</code>: Chỉ định cơ sở dữ liệu (default là 0).</li>
+</ul>
+</li>
+<li>
+<p>Các <strong>[COMMAND]</strong> hay sử dụng:</p>
+<ul>
+<li><code>ping</code>: Kiểm tra kết nối.</li>
+<li><code>INFO keyspace</code>: Liệt kê các db.</li>
+<li><code>select [DBNAME]</code>: chuyển đổi giữa các cơ sở dữ liệu.</li>
+<li><code>flushdb</code>: xoá tất các keys trong db hiện tại (xoá cache redis).</li>
+</ul>
+</li>
+<li>
+<p>Các db là dạng số, nằm trong khoảng min = 0 mà max = config <code>databases</code> trong file <code>/etc/redis.conf</code> (default).</p>
+</li>
+</ul>
+<p><img alt="redis-cli" src="/images/1/1/0038.png?featherlight=false&width=80pc"></p>
+<h3 id="command-varnish"><strong>Command varnish</strong></h3>
+<ul>
+<li>
+<p><code>varnishd</code> là dịch vụ chính của Varnish, được sử dụng để khởi động và quản lý Varnish.</p>
+</li>
+<li>
+<p>Syntax: <code>varnishd [OPTION]</code></p>
+</li>
+<li>
+<p><strong>[OPTION]</strong> hay sử dụng có <code>-f [FILENAME]</code>: Chỉ định tệp cấu hình VCL (thường mình export trong backend và config lại host port về webserver - apache/nginx)</p>
+</li>
+<li>
+<p><code>varnishlog</code> dùng để debug varnish real-time.</p>
+</li>
+<li>
+<p>Syntax: <code>varnishlog [OPTIONS]</code></p>
+</li>
+<li>
+<p>Các <strong>[OPTION]</strong> hay sử dụng cho <code>varnishlog</code>:</p>
+<ul>
+<li><code>-g [GROUP]</code>: Chỉ định nhóm các log để hiển thị (request hoặc session).</li>
+<li><code>-o</code>: Hiển thị log ở chế độ một dòng (one-line).</li>
+<li><code>-q query</code>: Lọc các log bằng ngôn ngữ truy vấn VSL</li>
+</ul>
+</li>
+<li>
+<p>Ví dụ, hiển thị các log lỗi client 503: <code>varnishlog -g request -q 'RespStatus == 503' -g request</code></p>
+</li>
+</ul>
+<h3 id="command-docker"><strong>Command docker</strong></h3>
+<ul>
+<li>Là 1 công cụ quản lý các containers</li>
+<li>Cho phép bạn đóng gói ứng dụng và các phụ thuộc của nó vào một đơn vị container, giúp đảm bảo rằng ứng dụng sẽ chạy nhất quán trên mọi môi trường (linux, window, macos,&hellip;).</li>
+<li>Syntax: <code>docker [COMMAND] [OPTION]</code></li>
+<li>Các <strong>[COMMAND]</strong> cùng <strong>[OPTION]</strong> đi kèm:
+<ul>
+<li><code>docker pull [IMAGE]:[TAG]</code>: Tải xuống một image từ Docker Hub (không điền tag thì mặc định sẽ lấy mới nhất).</li>
+<li><code>docker images</code>: Liệt kê các image Docker đã tải xuống.
+<ul>
+<li><code>-a</code>: liệt kê các image bị ẩn.</li>
+</ul>
+</li>
+<li><code>docker rmi [IMAGE_ID]</code>: xoá image.</li>
+<li><code>docker volume [COMMAND]</code>: quản lý các volume.
+<ul>
+<li><code>ls</code>: Liệt kê các volume.</li>
+<li><code>create [VOLUME_NAME]</code>: Tạo một volume mới.</li>
+<li><code>rm [VOLUME_NAME] [VOLUME_NAME]...</code>: xoá 1 hoặc nhiều volume</li>
+</ul>
+</li>
+<li><code>docker network</code>: Quản lý các network Docker.
+<ul>
+<li><code>ls</code>: Liệt kê các network.</li>
+<li><code>create [NETWORK_NAME]</code>: Tạo một network mới.</li>
+<li><code>connect [NETWORK_NAME] [CONTAINER_NAME]</code>: Kết nối một container vào một network.</li>
+<li><code>disconnect [NETWORK_NAME] [CONTAINER_NAME]</code>: Ngắt kết nối một container khỏi một network.</li>
+<li><code>rm [NETWORK_NAME] [NETWORK_NAME]...</code>: xoá 1 hoặc nhiều network
+
+<div class="notices tip" ><p>Thường sử dụng bridge network.</p>
+</div>
+</li>
+</ul>
+</li>
+<li><code>docker run [OPTION] [IMAGE]:[TAG]</code>: Chạy một container từ một image.
+<ul>
+<li><code>-d</code>: Chạy container ở chế độ nền</li>
+<li><code>-p [LOCAL_PORT]:[CONATINER_PORT]</code>: Map cổng từ host tới container.</li>
+<li><code>--name [CONTAINER_NAME]</code>: Đặt tên cho container.</li>
+<li><code>-e [VARIABLE]=[VALUE]</code>: Thiết lập biến môi trường cho container.</li>
+<li><code>-v</code>: Mount một volume vào container (volume có thể là folder).</li>
+</ul>
+</li>
+<li><code>docker stop [CONTAINER_NAME]</code>: Dừng một container đang chạy.</li>
+<li><code>docker start [CONTAINER_NAME]</code>: Khởi chạy một container.</li>
+<li><code>docker restart [CONTAINER_NAME]</code>: Khởi động lại một container.</li>
+<li><code>docker rm [CONTAINER_NAME]</code>: Xóa một container.</li>
+<li><code>docker ps</code>: list các container đang chạy
+<ul>
+<li><code>-a</code>: list thêm các container bị lỗi/đang stop</li>
+</ul>
+</li>
+<li><code>docker logs [CONTAINER_NAME]</code>: Xem log của một container.
+<ul>
+<li><code>-f</code>: Xem log real-time.</li>
+</ul>
+</li>
+<li><code>docker exec</code>: Chạy một lệnh trong một container đang chạy.
+<ul>
+<li><code>-it</code>: Chạy lệnh trong chế độ tương tác (login thẳng vào container đó)</li>
+<li><code>-u [USER]</code>: login bằng user cụ thể.</li>
+<li><code>-w [PATH]</code>: login vào đường dẫn cụ thể</li>
+</ul>
+</li>
+<li><code>docker inspect [CONTAINER_NAME/IMAGE/VOLUME/NETWORK]</code>: xem chi tiết thông tin của container/image/volume/network.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="docker" src="/images/1/1/0039.png?featherlight=false&width=80pc"></p>
+
+<div class="notices note" ><p>Để biết thêm về các docker, truy cập <a href="../1.2-Additional/1.2.3-Docker/">thông tin bổ sung về <strong>Docker</strong></a>.</p>
+</div>
+
+<h3 id="command-docker-compose"><strong>Command docker-compose</strong></h3>
+<ul>
+<li>Là 1 công cụ quản lý các container thông qua tệp YAML/YML.</li>
+<li>Syntax: <code>docker-compose [COMMAND] [OPTION]</code></li>
+<li><code>docker-compose</code> cũng có các <strong>[COMMAND]</strong> tương tự như docker như ps, stop/start/restart container, logs (-f), pull. Ngoài ra còn có:
+<ul>
+<li><code>docker-compose up</code>: Tạo và khởi động container.
+<ul>
+<li><code>-d</code>: Chạy ở chế độ nền.</li>
+<li><code>--build</code>: Xây dựng lại image trước khi khởi động.</li>
+</ul>
+</li>
+<li><code>docker-compose down</code>: Dừng và xóa container.
+<ul>
+<li><code>--volumes</code>: Xóa các volume liên kết.</li>
+</ul>
+</li>
+<li><code>docker-compose build</code>: Build hoặc rebuild container.
+<ul>
+<li><code>--no-cache</code>: Không sử dụng các cache layers.</li>
+</ul>
+</li>
+<li><code>docker-compose config</code>: Kiểm tra cấu hình.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="docker-compose" src="/images/1/1/0040.png?featherlight=false&width=80pc"></p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/1-server/" title="Server"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/1-server/1.2-additional/" title="Bổ xung" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1751531075"></script>
+    <script src="/js/perfect-scrollbar.min.js?1751531075"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1751531075"></script>
+    <script src="/js/jquery.sticky.js?1751531075"></script>
+    <script src="/js/featherlight.min.js?1751531075"></script>
+    <script src="/js/highlight.pack.js?1751531075"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1751531075"></script>
+    <script src="/js/learn.js?1751531075"></script>
+    <script src="/js/hugo-learn.js?1751531075"></script>
+
+    <link href="/mermaid/mermaid.css?1751531075" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1751531075"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

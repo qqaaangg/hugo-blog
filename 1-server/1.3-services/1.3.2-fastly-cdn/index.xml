@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fastly CDN on RDS Wiki</title>
+    <link>/1-server/1.3-services/1.3.2-fastly-cdn/</link>
+    <description>Recent content in Fastly CDN on RDS Wiki</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="/1-server/1.3-services/1.3.2-fastly-cdn/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
